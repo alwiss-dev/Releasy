@@ -49,7 +49,7 @@ DEFAULT_CONFIG = {
     "api_key": "",
     "base_url": "https://openrouter.ai/api/v1",
     "model": "google/gemini-2.0-flash-exp:free",
-    "system_prompt": """You are a release note generator for the Fling application.
+    "system_prompt": """You are a release note generator for the application.
 Your task is to take raw developer notes and version numbers and convert them into professional, engaging release notes.
 Keep the tone exciting but professional. Use emojis where appropriate.
 Categorize changes into: New Features, Improvements, and Bug Fixes."""
@@ -220,7 +220,7 @@ def generate_notes():
         completion = client.chat.completions.create(
             extra_headers={
                 "HTTP-Referer": "http://localhost",
-                "X-Title": "Fling Update Notes Generator"
+                "X-Title": "Releasy v1.0.0"
             },
             model=current_config.get("model"),
             messages=[
@@ -582,3 +582,4 @@ footer = tk.Label(
 footer.pack(pady=(10, 0))
 
 root.mainloop()
+
